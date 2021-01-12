@@ -47,8 +47,8 @@ public class AuthServices {
     }
     public void authenticate(String username, String password) throws AuthExepction {
         Personel staff = personel.getByUsername(username);
-        var uczen = uczenRepo.getByUsername(username);
-        var rodzic = rodzicRepo.getByUsername(username);
+        Uczen uczen = uczenRepo.getByUsername(username);
+        Rodzic rodzic = rodzicRepo.getByUsername(username);
 
         if(staff != null && staff.checkPassword(password)){
             VaadinSession.getCurrent().setAttribute(Personel.class, staff);

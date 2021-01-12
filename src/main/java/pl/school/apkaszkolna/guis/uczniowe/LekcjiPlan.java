@@ -26,7 +26,7 @@ public class LekcjiPlan extends VerticalLayout {
     public LekcjiPlan(FillPersonel fp) {
         this.fp = fp;
 
-        var stud = VaadinSession.getCurrent().getAttribute(Uczen.class);
+        Uczen stud = VaadinSession.getCurrent().getAttribute(Uczen.class);
 
         Grid<PlanLekcji> grid = new Grid<>();
         grid.removeAllColumns();

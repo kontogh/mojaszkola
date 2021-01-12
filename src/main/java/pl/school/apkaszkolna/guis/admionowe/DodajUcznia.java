@@ -67,7 +67,7 @@ public class DodajUcznia extends FormLayout {
         Button dodaj = new Button("Zapisz ucznia");
         dodaj.addClickListener(event ->{
 
-            var uczen = new Uczen(loginTF.getValue(), hasloTF.getValue(), Rola.STUD);
+            Uczen uczen = new Uczen(loginTF.getValue(), hasloTF.getValue(), Rola.STUD);
             uczen.setImie(imieTF.getValue()); uczen.setNazwisko(nazwiskoTF.getValue());uczen.setPesel(peselTF.getValue());
             uczen.setMiasto(miastoTF.getValue()); uczen.setUlica(ulicaTF.getValue()); uczen.setNrDomu(nrDomuTF.getValue());
             uczen.setPoczta(pocztaTF.getValue()+pocztamiastoTF.getValue()); uczen.setDataUrodzenia(dataurodzenia.getText());

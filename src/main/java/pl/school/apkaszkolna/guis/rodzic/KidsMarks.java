@@ -34,7 +34,7 @@ public class KidsMarks extends VerticalLayout {
         this.repo = repo;
         this.uczrepo = uczrepo;
 
-        var tenrodzic= VaadinSession.getCurrent().getAttribute(Rodzic.class);
+        Rodzic tenrodzic= VaadinSession.getCurrent().getAttribute(Rodzic.class);
         List<Uczen> kids = uczrepo.dziecirodzica(tenrodzic.getId());
         Map<String, Long>  imieID = kids.stream().collect(Collectors.toMap(Uczen::getImie, Uczen::getId));
 

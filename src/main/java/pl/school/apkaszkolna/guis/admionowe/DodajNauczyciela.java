@@ -56,7 +56,7 @@ public class DodajNauczyciela extends FormLayout {
         });
         Button dodaj = new Button("Zapisz pracownika");
         dodaj.addClickListener(event ->{
-            var staff = new Personel(loginTF.getValue(), pf.getValue(), Rola.TEACHER);
+            Personel staff = new Personel(loginTF.getValue(), pf.getValue(), Rola.TEACHER);
             staff.setImie(imieTF.getValue()); staff.setNazwisko(nazwiskoTF.getValue());
             staff.setPesel(peselTF.getValue());staff.setMiasto(miastoTF.getValue());
             staff.setUlica(ulicaTF.getValue()); staff.setNrDomu(nrDomuTF.getValue());
