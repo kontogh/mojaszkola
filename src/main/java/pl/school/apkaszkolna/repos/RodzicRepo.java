@@ -17,4 +17,9 @@ public interface RodzicRepo extends CrudRepository<Rodzic, Long> {
     @Query(value = "SELECT * FROM RODZIC WHERE ID = ?1", nativeQuery = true)
     Optional<Rodzic> getByUczenId(long id);
 
+
+    @Query(value = "SELECT * FROM RODZIC WHERE USERNAME = ?1", nativeQuery = true)
+    Optional<Rodzic> findIfExist(String id);
+
+
 }

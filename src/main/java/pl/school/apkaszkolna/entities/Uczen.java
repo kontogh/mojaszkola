@@ -10,7 +10,6 @@ import java.util.List;
 @Entity
 public class Uczen extends Uzytkownik {
 
-
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="idKlasy", nullable=false)
     private Klasa klasa;

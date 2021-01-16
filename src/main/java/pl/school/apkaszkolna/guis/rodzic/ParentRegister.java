@@ -48,19 +48,29 @@ public class ParentRegister extends Composite {
             Notification.show("Hasło się nie zgadzają", 2000, Notification.Position.MIDDLE);
         }
         else {
-            auth.rejestruj(val, val2);
-            Notification done = new Notification("Rejestracja się powiodła");
-            done.setDuration(2500);
-            done.setPosition(Notification.Position.MIDDLE);
-            done.addThemeVariants(NotificationVariant.LUMO_SUCCESS);
-            done.setOpened(true);
-            try {
-                sleep(2500);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }finally {
-                UI.getCurrent().getPage().setLocation("szkola/logowanie");
+            try{
+                auth.rejestruj(val, val2);
+                Notification done = new Notification("Rejestracja się powiodła");
+                done.setDuration(2500);
+                done.setPosition(Notification.Position.MIDDLE);
+                done.addThemeVariants(NotificationVariant.LUMO_SUCCESS);
+                done.setOpened(true);
+                try {
+                    sleep(2500);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }finally {
+                    UI.getCurrent().getPage().setLocation("szkola/logowanie");
+                }
             }
+            catch (AuthServices.AuthExepction exep){
+                Notification done = new Notification("Nazwa użytkownika jest już zajęta");
+                done.setDuration(2500);
+                done.setPosition(Notification.Position.MIDDLE);
+                done.addThemeVariants(NotificationVariant.LUMO_ERROR);
+                done.setOpened(true);
+            }
+
         }
     }
 }

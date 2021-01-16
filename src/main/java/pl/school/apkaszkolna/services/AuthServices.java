@@ -116,8 +116,14 @@ public class AuthServices {
         return routes;
     }
 
-    public void rejestruj(String val, String val2) {
-        rodzicRepo.save(new Rodzic(val, val2, Rola.PARENT));
+    public void rejestruj(String val, String val2) throws AuthExepction{
+        var isOccupied = rodzicRepo.findIfExist(val);
+        if(isOccupied.isEmpty()){
+            rodzicRepo.save(new Rodzic(val, val2, Rola.PARENT));
+        }
+        else {
+            throw new  AuthExepction();
+        }
     }
 
 }
